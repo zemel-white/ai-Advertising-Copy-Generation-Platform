@@ -1,0 +1,6 @@
+-- 为AI模型表添加新的配置字段
+ALTER TABLE ai_models 
+ADD COLUMN IF NOT EXISTS temperature DECIMAL(3,2) DEFAULT 0.7,
+ADD COLUMN IF NOT EXISTS top_p DECIMAL(3,2) DEFAULT 1.0,
+ADD COLUMN IF NOT EXISTS max_tokens INTEGER DEFAULT 2048,
+ADD COLUMN IF NOT EXISTS system_prompt TEXT DEFAULT 'You are a helpful assistant.';
